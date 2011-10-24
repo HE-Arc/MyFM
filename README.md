@@ -10,21 +10,21 @@ See more on the [Haute-Ecole Arc Ingénierie website](http://ingenierie.he-arc.c
 
 All issues, bugs can be found here :
 
-(https://github.com/acramatte/MyFM/issues)
+https://github.com/acramatte/MyFM/issues
 
 ## Authors
 
 Alexis Cramatte
 
-* (https://github.com/acramatte)
+* https://github.com/acramatte
 
 Anthony Geiser
 
-* (https://github.com/toxis)
+* https://github.com/toxis
 
 Julien Wolflisberg
 
-* (https://github.com/wolflisj)
+* https://github.com/wolflisj
 
 ## License
 
