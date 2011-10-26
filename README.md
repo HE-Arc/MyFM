@@ -10,7 +10,7 @@ See more on the [Haute-Ecole Arc Ingénierie website](http://ingenierie.he-arc.c
 
 All issues, bugs can be found here :
 
-https://github.com/acramatte/MyFM/issues
+https://github.com/HE-Arc/MyFM/issues
 
 ## Authors
 
