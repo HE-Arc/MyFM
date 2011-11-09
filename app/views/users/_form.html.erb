@@ -25,11 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :borndate %><br />
-    <%= f.date_select :borndate %>
-  </div>
-  <div class="field">
-    <%= f.label :createddate %><br />
-    <%= f.datetime_select :createddate %>
+    <%= f.date_select :borndate, :start_year=>Time.now.year-50, :end_year=>Time.now.year, :order=> [:day,:month,:year] %>
   </div>
   <div class="actions">
     <%= f.submit %>
