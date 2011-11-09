@@ -3,4 +3,17 @@
 <h2>Users :</h2>
 <%= link_to "User", users_path%>
 
+<% if signed_in? %>
+  <%= current_user.email %>
+  <%= link_to "Sign out", sign_out_path, :method => :delete %>
+<% else %>
+  <%= link_to "Sign in", sign_in_path %>
+<% end %>
+
+<% flash.each do |key, value| -%>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end -%>
+
+
+
 <p>Find me in app/views/home/index.html.erb</p>
