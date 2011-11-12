@@ -11,32 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20111112123647) do
+ActiveRecord::Schema.define(:version => 20111109145417) do
 
   create_table "bands", :force => true do |t|
+      t.string   "name"
+      t.date     "creation_date"
+      t.string   "lastFM_url"
+      t.text     "bio"
+      t.string   "twitter_url"
+      t.string   "avatar"
+      t.datetime "created_at"
+      t.datetime "updated_at"
+  end
+    
+  create_table "users", :force => true do |t|
     t.string   "name"
-    t.date     "creation_date"
-    t.string   "lastFM_url"
-    t.text     "bio"
-    t.string   "twitter_url"
-    t.string   "avatar"
+    t.string   "firstname"
+    t.string   "nickname"
+    t.date     "borndate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "encrypted_password", :limit => 128
+    t.string   "salt",               :limit => 128
+    t.string   "confirmation_token", :limit => 128
+    t.string   "remember_token",     :limit => 128
   end
-=======
-ActiveRecord::Schema.define(:version => 20111112124217) do
->>>>>>> ff1cf0aa87bc22d3d1f207546fb521d7dd415628
 
-  create_table "bands", :force => true do |t|
-    t.string   "name"
-    t.string   "creation_date"
-    t.string   "lastFM_url"
-    t.text     "bio"
-    t.string   "twitter_url"
-    t.string   "avatar"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
