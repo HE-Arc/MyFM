@@ -11,27 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20111109145417) do
-
-  create_table "bands", :force => true do |t|
-      t.string   "name"
-      t.date     "creation_date"
-      t.string   "lastFM_url"
-      t.text     "bio"
-      t.string   "twitter_url"
-      t.string   "avatar"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-  end
-    
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "firstname"
-    t.string   "nickname"
-    t.date     "borndate"
-=======
-ActiveRecord::Schema.define(:version => 20111112124217) do
+ActiveRecord::Schema.define(:version => 20111112145538) do
 
   create_table "bands", :force => true do |t|
     t.string   "name"
@@ -40,6 +20,23 @@ ActiveRecord::Schema.define(:version => 20111112124217) do
     t.text     "bio"
     t.string   "twitter_url"
     t.string   "avatar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "band_id"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "firstname"
+    t.string   "nickname"
+    t.date     "borndate"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"

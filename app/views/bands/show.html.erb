@@ -30,6 +30,13 @@
   <%= @band.avatar %>
 </p>
 
+<%= link_to "New post", new_band_post_path(@band) %>
+<ul>
+	<% @posts.each do |post| %>
+		<li><%= link_to post.title, [@band, post] %></li>
+	<% end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>

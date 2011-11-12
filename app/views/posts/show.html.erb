@@ -1,0 +1,9 @@
+<h1><%= @band.name %></h1>
+<article>
+<b><%= @post.title %></b>
+<p><%= link_to "Back", :back %></p>
+<section><%= div_for @post do %>
+	<%= @post.content %>
+<% end -%>
+</section>
+</article>

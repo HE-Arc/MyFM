@@ -14,11 +14,7 @@ class BandsController < ApplicationController
   # GET /bands/1.json
   def show
     @band = Band.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @band }
-    end
+    @posts = @band.posts
   end
 
   # GET /bands/new

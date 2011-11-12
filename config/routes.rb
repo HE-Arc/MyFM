@@ -1,5 +1,8 @@
 MyFM::Application.routes.draw do
-  resources :bands
+  
+  resources :bands do
+    resources :posts
+  end
 
   get "home/index"
 
