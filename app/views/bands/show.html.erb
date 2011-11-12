@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @band.name %>
+</p>
+
+<p>
+  <b>Creation date:</b>
+  <%= @band.creation_date %>
+</p>
+
+<p>
+  <b>Lastfm url:</b>
+  <%= @band.lastFM_url %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @band.bio %>
+</p>
+
+<p>
+  <b>Twitter url:</b>
+  <%= @band.twitter_url %>
+</p>
+
+<p>
+  <b>Avatar:</b>
+  <%= @band.avatar %>
+</p>
+
+
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>
