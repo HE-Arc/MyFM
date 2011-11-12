@@ -16,7 +16,7 @@
   </div>
   <div class="field">
     <%= f.label :creation_date %><br />
-    <%= f.date_select :creation_date %>
+    <%= f.date_select :creation_date, :start_year=>Time.now.year-50, :end_year=>Time.now.year, :order=> [:day,:month,:year] %>
   </div>
   <div class="field">
     <%= f.label :lastFM_url %><br />
