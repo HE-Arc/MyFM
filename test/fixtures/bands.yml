@@ -2,7 +2,11 @@
 
 one:
   name: MyString
+<<<<<<< HEAD
   creation_date: 2011-11-12
+=======
+  creation_date: MyString
+>>>>>>> ff1cf0aa87bc22d3d1f207546fb521d7dd415628
   lastFM_url: MyString
   bio: MyText
   twitter_url: MyString
@@ -10,7 +14,11 @@ one:
 
 two:
   name: MyString
+<<<<<<< HEAD
   creation_date: 2011-11-12
+=======
+  creation_date: MyString
+>>>>>>> ff1cf0aa87bc22d3d1f207546fb521d7dd415628
   lastFM_url: MyString
   bio: MyText
   twitter_url: MyString
