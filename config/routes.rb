@@ -4,6 +4,10 @@ MyFM::Application.routes.draw do
     resources :posts
   end
    
+  resource  :session,
+    :controller => 'sessions',
+    :only => [:new, :create, :destroy]
+       
   match '/sign_out' => 'sessions#destroy'
   
   resources :users
