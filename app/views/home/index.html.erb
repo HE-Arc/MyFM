@@ -2,11 +2,9 @@
 <h2>Home page - MyFM</h2>
 <% if signed_in? %>
   <%= current_user.email %>
-  <%= link_to "Sign out", sign_out_path, :method => :delete %>
+  <%= link_to "User", user_path(current_user.id) %>
 <% else %>
   <%= link_to "Sign in", sign_in_path %>
 <% end %>
-
-<%= link_to "Band", bands_path %>
 
 <p>Find me in app/views/home/index.html.erb</p>

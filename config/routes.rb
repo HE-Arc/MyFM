@@ -3,6 +3,7 @@ MyFM::Application.routes.draw do
   resources :bands do
     resources :posts
   end
+  resources :users
 
   get "home/index"
 
