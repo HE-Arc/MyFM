@@ -2,46 +2,53 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @band.name %>
-</p>
+<div class="main_div">
+	<div class="band_info">
+		<p>
+		  <b>Name:</b>
+		  <%= @band.name %>
+		</p>
 
-<p>
-  <b>Creation date:</b>
-  <%= @band.creation_date %>
-</p>
+		<p>
+		  <b>Creation date:</b>
+		  <%= @band.creation_date %>
+		</p>
 
-<p>
-  <b>Lastfm url:</b>
-  <%= @band.lastFM_url %>
-</p>
+		<p>
+		  <b>Lastfm url:</b>
+		  <%= @band.lastFM_url %>
+		</p>
 
-<p>
-  <b>Bio:</b>
-  <%= @band.bio %>
-</p>
+		<p>
+		  <b>Bio:</b>
+		  <%= @band.bio %>
+		</p>
 
-<p>
-  <b>Twitter url:</b>
-  <%= @band.twitter_url %>
-</p>
+		<p>
+		  <b>Twitter url:</b>
+		  <%= @band.twitter_url %>
+		</p>
 
-<p>
-  <b>Avatar:</b>
-  <%= @band.avatar %>
-</p>
+		<p>
+		  <b>Avatar:</b>
+		  <%= @band.avatar %>
+		</p>
+		
+		<p>
+			<%= link_to "New post", new_band_post_path(@band) %> |
+			<%= link_to "Edit band", edit_band_path(@band) %> |
+			<%= link_to "Back", bands_path %>
+		</p>
+	</div>
 
+	<div class="posts">
+		<% @posts.each do |post| %>
+			<div class="post_divs">
+				<%= link_to post.title, [@band, post] %> 
+				<i class="timestamp"> posted <%= distance_of_time_in_words(Time.now, post.created_at) %> ago.</i><br />
+				<%= post.content %>
+			</div>
+		<% end %>
+	</div>
 </div>
 
-<div class="post">
-<%= link_to "New post", new_band_post_path(@band) %>
-<ul>
-	<% @posts.each do |post| %>
-		<li><%= link_to post.title, [@band, post] %></li>
-	<% end %>
-</ul>
-</div>
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>
