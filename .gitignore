@@ -4,3 +4,5 @@ log/*.log
 tmp/
 .sass-cache/
 Gemfile.lock
+
+Gemfile.lock
