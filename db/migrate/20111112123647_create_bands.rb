@@ -7,7 +7,6 @@ class CreateBands < ActiveRecord::Migration
       t.text :bio
       t.string :twitter_url
       t.string :avatar
-
       t.timestamps
     end
   end

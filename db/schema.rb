@@ -11,8 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112145538) do
-
   create_table "bands", :force => true do |t|
     t.string   "name"
     t.date     "creation_date"
@@ -37,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20111112145538) do
     t.string   "firstname"
     t.string   "nickname"
     t.date     "borndate"
+    t.datetime "last_signed_in_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
