@@ -1,12 +1,10 @@
 require 'test_helper'
 
 class BandTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-  
-  test "new band should be named Band" do
-    assert_equal("Band", Band.new.name)
+
+  test "should not save band without name" do
+    band = Band.new
+    assert !band.save, "Saved the band without a name"
   end
   
 end
