@@ -1,7 +1,7 @@
 class UsersController < Clearance::UsersController
+  before_filter :authorize
   def show
     #@user = current_user.id
-    before_filter :authorize
   end
   
   # Sign up
