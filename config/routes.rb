@@ -9,7 +9,6 @@ MyFM::Application.routes.draw do
     :only => [:new, :create, :destroy]
        
   match '/sign_out' => 'sessions#destroy'
-  match '/index',    :to => 'home#index'
   
   resources :users
 
