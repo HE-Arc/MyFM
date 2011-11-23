@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20111112145538) do
   create_table "bands", :force => true do |t|
     t.string   "name"
     t.date     "creation_date"
-    t.string   "lastFM_url"
+    t.string   "lastFM_bandname"
     t.text     "bio"
     t.string   "twitter_url"
     t.string   "avatar"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20111112145538) do
     t.string   "firstname"
     t.string   "nickname"
     t.date     "borndate"
+    t.string   "lastFM_nickname"
     t.datetime "last_signed_in_at"
     t.datetime "created_at"
     t.datetime "updated_at"
