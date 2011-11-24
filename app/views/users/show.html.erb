@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+<%= gravatar_image_tag @user.email %>
+<%= @user.firstname + " " + @user.name %>
+</h1>
+
 <p>
   <b>Name:</b>
   <%= @user.name %>
@@ -16,11 +21,16 @@
 </p>
 
 <p>
-  <b>id:</b>
-  <%= @user.id %>
+	<b>Birthday:</b>
+	<%= @user.borndate %>
 </p>
 
 <p>
   <b>last signed in at:</b>
   <%= @user.last_signed_in_at%>
+</p>
+
+<p>
+  <b>URL:</b>
+  <%= link_to user_path(@user), @user %>
 </p>
