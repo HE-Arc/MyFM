@@ -1,0 +1,51 @@
+#header
+{
+	background-color: #222222;
+	color: #FFFFFF;
+	/*padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;*/
+	margin-bottom: 10px;
+}
+
+img
+{
+  vertical-align: middle;
+}
+
+body
+{
+	background: #C3D9FF;
+}
+
+nav {
+  background-color: white;
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
