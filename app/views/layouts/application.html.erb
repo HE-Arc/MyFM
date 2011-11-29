@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= javascript_include_tag :defaults %>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <title><%= title %></title>
   <%= csrf_meta_tag %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->    
+  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
 </head>
 <body>
   <div id="header">
-    <% if signed_in? -%>
-      (<%= current_user.email %>) &gt;
-      <%= link_to "Sign out", sign_out_path, :method => :delete %> |
-      <%= link_to "My profile", user_path(current_user.id)%> |
-    <% else -%>
-      <%= link_to "Sign in", sign_in_path %>
-    <% end -%>
-    <%= link_to "Home", root_path %>
+  	<div class="container">
+  	  	
+  	  	<%= link_to image_tag("logo16.png", :alt => "MyFM", :class => "round"), root_path %>MyFM |
+	    <% if signed_in? %>
+	      <%= current_user.firstname %>&nbsp;<%= current_user.name %>
+	    <% else %>
+	      <%= link_to "Sign in", sign_in_path %>
+	    <% end %>
+	  <div style="float: right; padding-top: 7px;">
+	  	<% if signed_in? %>
+	  	  <%= link_to "Home", root_path %> | My bands | <%= link_to "My profile", user_path(current_user.id)%> | <%= link_to "Sign out", sign_out_path %>
+	  	<% else %>
+	  	  New on MyFM? <%= link_to "Sign up now!", sign_up_path %>
+	  	<% end %>
+	  </div>
+	</div>
   </div>
   <div id="flash">
     <% flash.each do |key, value| -%>
       <div id="flash_<%= key %>"><%=h value %></div>
     <% end %>
   </div>
-  <%= yield %>
+  <div class="container">
+  	<%= yield %>
+  </div>
 </body>
 </html>
