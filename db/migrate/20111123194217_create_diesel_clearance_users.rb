@@ -5,6 +5,7 @@ class CreateDieselClearanceUsers < ActiveRecord::Migration
       t.string   :firstname
       t.string   :name
       t.date     :borndate
+      t.string   :lastFM_nickname
       t.datetime :last_signed_in_at
       t.string   :encrypted_password, :limit => 128
       t.string   :salt,               :limit => 128

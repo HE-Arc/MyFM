@@ -1,17 +1,14 @@
 <h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Email</th>
-    <th></th>
-  </tr>
+<%= will_paginate %>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.id %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-  </tr>
-<% end %>
-</table>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_image_tag user.email, :size => 30 %>
+      <%= link_to user.firstname + " " + user.name, user %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

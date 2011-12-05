@@ -1,0 +1,24 @@
+<h1>Edit your profile</h1>
+
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :name, "Name" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :firstname, "Firstname" %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Email" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<div>
+  <%= gravatar_image_tag @user.email %>
+  <a href="http://gravatar.com/emails">changer</a>
+</div>

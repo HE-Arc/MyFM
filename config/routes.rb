@@ -3,6 +3,15 @@ MyFM::Application.routes.draw do
   get "pages/home"
   get "pages/about"
   
+  #resources :users
+  #match 'mybands', :to => "user#mybands", :as => :mybands
+  
+  resources :users do
+    member do
+      get :mybands # /users/id/mybands -- route named : mybands_user_path(id)
+    end
+  end
+  
   resources :bands do
     resources :posts
   end
@@ -10,11 +19,11 @@ MyFM::Application.routes.draw do
   resource  :session,
     :controller => 'sessions',
     :only => [:new, :create, :destroy]
+    
+  resource :bandrelation, :only => [:create, :destroy]
        
   match '/sign_out' => 'sessions#destroy'
-  
-  resources :users
-  
+    
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

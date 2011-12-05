@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  belongs_to :band
+  belongs_to :comment, :polymorphic => true
   
   def clear_post
     self.content = ""

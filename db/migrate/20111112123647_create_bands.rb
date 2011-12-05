@@ -3,7 +3,7 @@ class CreateBands < ActiveRecord::Migration
     create_table :bands do |t|
       t.string :name
       t.date :creation_date
-      t.string :lastFM_url
+      t.string :lastFM_bandname
       t.text :bio
       t.string :twitter_url
       t.string :avatar

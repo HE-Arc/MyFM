@@ -1,9 +1,9 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.integer :band_id
-      t.string :title
       t.text :content
+      t.integer :comment_id
+      t.string :comment_type
 
       t.timestamps
     end

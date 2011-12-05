@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112145538) do
+ActiveRecord::Schema.define(:version => 20111129145543) do
+
+  create_table "bandrelations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "band_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bandrelations", ["band_id"], :name => "index_bandrelations_on_band_id"
+  add_index "bandrelations", ["user_id", "band_id"], :name => "index_bandrelations_on_user_id_and_band_id", :unique => true
+  add_index "bandrelations", ["user_id"], :name => "index_bandrelations_on_user_id"
 
   create_table "bands", :force => true do |t|
     t.string   "name"
@@ -25,27 +36,26 @@ ActiveRecord::Schema.define(:version => 20111112145538) do
   end
 
   create_table "posts", :force => true do |t|
-    t.integer  "band_id"
-    t.string   "title"
     t.text     "content"
+    t.integer  "comment_id"
+    t.string   "comment_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
+    t.string   "email"
     t.string   "firstname"
-    t.string   "nickname"
+    t.string   "name"
     t.date     "borndate"
     t.string   "lastFM_nickname"
     t.datetime "last_signed_in_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "email"
     t.string   "encrypted_password", :limit => 128
     t.string   "salt",               :limit => 128
     t.string   "confirmation_token", :limit => 128
     t.string   "remember_token",     :limit => 128
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

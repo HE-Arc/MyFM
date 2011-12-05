@@ -23,7 +23,8 @@
 	    <% end %>
 	  <div style="float: right; padding-top: 7px;">
 	  	<% if signed_in? %>
-	  	  <%= link_to "Home", root_path %> | My bands | <%= link_to "My profile", user_path(current_user.id)%> | <%= link_to "Sign out", sign_out_path %>
+	<!--mybands_user_path(current_user.id)-->
+	  	  <%= link_to "Home", root_path %> | <%= link_to "My bands", mybands_user_path(current_user.id) %> | <%= link_to "My profile", user_path(current_user.id)%> | <%= link_to "Settings", edit_user_path(current_user)%> | <%= link_to "Sign out", sign_out_path %>
 	  	<% else %>
 	  	  New on MyFM? <%= link_to "Sign up now!", sign_up_path %>
 	  	<% end %>
