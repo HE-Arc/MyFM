@@ -2,19 +2,15 @@ class BandsController < ApplicationController
   # GET /bands
   # GET /bands.json
   def index
-    @bands = Band.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @bands }
-    end
+    @title = "All bands"
+    @bands = Band.paginate(:page => params[:page])
   end
 
   # GET /bands/1
   # GET /bands/1.json
   def show
     @band = Band.find(params[:id])
-    @posts = @band.posts
+    @posts = @band.posts.paginate(:page => params[:page])
   end
 
   # GET /bands/new

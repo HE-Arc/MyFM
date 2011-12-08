@@ -6,6 +6,8 @@ namespace :db do
     Rake::Task['db:reset'].invoke 
     make_bands
     make_users
+    make_posts_user
+    make_posts_band
     make_bandrelations
   end
 end
@@ -26,6 +28,22 @@ def make_users
     password = "1234"
     borndate = "2011-11-30"
     User.create(:name => name,:email=>email,:password => password, :firstname => firstname, :borndate => borndate)
+  end
+end
+
+def make_posts_user
+  User.all(:limit => 6).each do |user|
+    50.times do
+      user.posts.create!(:content => Faker::Lorem.sentence(5))
+    end
+  end
+end
+
+def make_posts_band
+  Band.all(:limit => 6).each do |band|
+    50.times do
+      band.posts.create!(:content => Faker::Lorem.sentence(5))
+    end
   end
 end
 

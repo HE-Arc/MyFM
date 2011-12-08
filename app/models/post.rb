@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  
   belongs_to :comment, :polymorphic => true
   
   def clear_post
@@ -8,5 +9,7 @@ class Post < ActiveRecord::Base
   def clear_post_title
     self.title = ""
   end
+  
+  default_scope :order => 'posts.created_at DESC'
   
 end

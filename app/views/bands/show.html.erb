@@ -1,53 +1,23 @@
 <div class="information">
 <p id="notice"><%= notice %></p>
 
-<div class="main_div">
-	<div class="band_info">
-		<p>
-		  <b>Name:</b>
-		  <%= @band.name %>
-		</p>
+<h1><%= @band.name %></h1>
 
-		<p>
-		  <b>Creation date:</b>
-		  <%= @band.creation_date %>
-		</p>
-
-		<p>
-		  <b>Lastfm url:</b>
-		  <%= @band.lastFM_bandname %>
-		</p>
-
-		<p>
-		  <b>Bio:</b>
-		  <%= @band.bio %>
-		</p>
-
-		<p>
-		  <b>Twitter url:</b>
-		  <%= @band.twitter_url %>
-		</p>
-
-		<p>
-		  <b>Avatar:</b>
-		  <%= @band.avatar %>
-		</p>
-		
-		<p>
-			<%= link_to "New post", new_band_post_path(@band) %> |
-			<%= link_to "Edit band", edit_band_path(@band) %> |
-			<%= link_to "Back", bands_path %>
-		</p>
-	</div>
-
-	<div class="posts">
-		<% @posts.each do |post| %>
-			<div class="post_divs">
-				<%= link_to post.title, [@band, post] %> 
-				<i class="timestamp"> posted <%= distance_of_time_in_words(Time.now, post.created_at) %> ago.</i><br />
-				<%= post.content %>
-			</div>
-		<% end %>
-	</div>
-</div>
+<table class="profile">
+	<td class="sidebar">
+		<strong>Creation date</strong> <%= @band.creation_date %><br />
+		<strong>LastFM</strong> <%= @band.lastFM_bandname %><br />
+		<strong>Bio</strong> <%= @band.bio %><br />
+		<strong>URL</strong> <%= link_to user_path(@band), @band %><br />
+		<strong>Messages</strong> <%= @band.posts.count %><br />
+	</td>
+	<td class="main">
+		<% unless @band.posts.empty? %>
+        <table class="posts">
+          <%= render @posts %>
+        </table>
+        <%= will_paginate @posts %>
+      <% end %>
+	</td>
+</table>
 

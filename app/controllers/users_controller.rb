@@ -4,7 +4,6 @@ class UsersController < Clearance::UsersController
   before_filter :correct_user, :only => [:edit, :update]
   
   def index
-    #@users = User.all
     @title = "All users"
     @users = User.paginate(:page => params[:page])
   end
@@ -13,6 +12,10 @@ class UsersController < Clearance::UsersController
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(:page => params[:page])
 	  @title = @user.firstname + " " + @user.name
+	  
+	  if @user == current_user
+      @p = Post.new # Variable to allowed the current user to create a new post
+    end
   end
   
   def edit

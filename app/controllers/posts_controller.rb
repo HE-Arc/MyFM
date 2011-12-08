@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
 
-  before_filter :get_band
+  before_filter :find_parent
+  before_filter :authorized_type, :only => :destroy
   
+  # /type/1/post
   def show
     @post = Post.find params[:id]
   end
@@ -14,13 +16,26 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
   end
   
+  def index
+    @post = @parent.posts
+  end
+  
   def create
-    @post = @band.posts.build params[:post]
+    @post = @parent.posts.build params[:post]
     if @post.save
-      redirect_to [@band, @post], :notice => "Post created!"
+      redirect_to @parent
     else
       render :new
     end
+    #@post = @parent.posts.create(params[:posts])
+    #respond_to do |format|
+    #  format.html {redirect_to :controller => @parent.class.to_s.pluralize.downcase, :action => :show, :id => @parent.id}
+    #end
+    #if @post.save
+    #  redirect_to parent_url(@parent)
+    #else
+    #  render :action => 'new'
+    #end
   end
   
   def update
@@ -33,14 +48,25 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post = Post.find params[:id]
     @post.destroy
-    redirect_to @band, :notice => "Post destroyed!"
+    redirect_back_or root_path
   end
   
   protected
-  def get_band
-    @band = Band.find params[:band_id]
+  
+  def authorized_user
+    @post = Post.find(params[:id])
+    @user = @post.comment_id
+    redirect_to root_path unless current_user == @user
+  end
+  
+  # Find the parent of current post
+  def find_parent
+    case
+      when params[:user_id] then @parent = User.find_by_id(params[:user_id])
+      when params[:band_id] then @parent = Band.find_by_id(params[:band_id])
+    end
+     
   end
 
 end

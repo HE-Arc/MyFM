@@ -1,6 +1,6 @@
 class Band < ActiveRecord::Base
   
-  has_many :posts, :as => :comment, :order => "created_at DESC"
+  has_many :posts, :as => :comment
   
   has_many :bandrelations
   has_many :users, :through => :bandrelations

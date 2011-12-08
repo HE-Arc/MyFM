@@ -7,6 +7,7 @@ MyFM::Application.routes.draw do
   #match 'mybands', :to => "user#mybands", :as => :mybands
   
   resources :users do
+    resources :posts
     member do
       get :mybands # /users/id/mybands -- route named : mybands_user_path(id)
     end
@@ -15,6 +16,8 @@ MyFM::Application.routes.draw do
   resources :bands do
     resources :posts
   end
+  
+  #polymorphic_url(:posts) # => "http://example.com/users/1/posts/1"
    
   resource  :session,
     :controller => 'sessions',
