@@ -3,6 +3,15 @@
 
 <h1><%= @band.name %></h1>
 
+<% if @is_admin_of_band %>
+	<h2>What's up?</h2>
+	<%= form_for [@band, @post] do |f| %>
+		<%= f.label :content %><br />
+		<%= f.text_field :content %><br />
+		<%= f.submit %>
+	<% end %>
+<% end %>
+
 <table class="profile">
 	<td class="sidebar">
 		<strong>Creation date</strong> <%= @band.creation_date %><br />

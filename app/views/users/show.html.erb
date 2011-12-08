@@ -5,13 +5,13 @@
 <%= @user.firstname + " " + @user.name %>
 </h1>
 
-<% if current_user == @user %>
+<% if @is_admin_of_page %>
 	<h2>What's up?</h2>
-	<%= form_for [@user, @p] do |f| %>
+	<%= form_for [@user, @post] do |f| %>
 		<%= f.label :content %><br />
 		<%= f.text_field :content %><br />
-	<%= f.submit %>
-<% end -%>
+		<%= f.submit %>
+	<% end %>
 <% end %>
 
 <table class="profile">

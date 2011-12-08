@@ -1,27 +1,26 @@
 class BandsController < ApplicationController
   # GET /bands
-  # GET /bands.json
   def index
     @title = "All bands"
     @bands = Band.paginate(:page => params[:page])
   end
 
   # GET /bands/1
-  # GET /bands/1.json
   def show
     @band = Band.find(params[:id])
     @posts = @band.posts.paginate(:page => params[:page])
+    
+    if isCurrentUserInBand
+      @post = Post.new
+      @is_admin_of_band = true
+    else
+      @is_admin_of_band = false
+    end
   end
 
   # GET /bands/new
-  # GET /bands/new.json
   def new
     @band = Band.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @band }
-    end
   end
 
   # GET /bands/1/edit
@@ -30,7 +29,6 @@ class BandsController < ApplicationController
   end
 
   # POST /bands
-  # POST /bands.json
   def create
     @band = Band.new(params[:band])
 
@@ -46,7 +44,6 @@ class BandsController < ApplicationController
   end
 
   # PUT /bands/1
-  # PUT /bands/1.json
   def update
     @band = Band.find(params[:id])
 
@@ -62,14 +59,15 @@ class BandsController < ApplicationController
   end
 
   # DELETE /bands/1
-  # DELETE /bands/1.json
   def destroy
     @band = Band.find(params[:id])
     @band.destroy
-
-    respond_to do |format|
-      format.html { redirect_to bands_url }
-      format.json { head :ok }
-    end
   end
+  
+  private
+  
+  def isCurrentUserInBand
+    return @band.users.include? current_user
+  end
+  
 end

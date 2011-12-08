@@ -14,7 +14,10 @@ class UsersController < Clearance::UsersController
 	  @title = @user.firstname + " " + @user.name
 	  
 	  if @user == current_user
-      @p = Post.new # Variable to allowed the current user to create a new post
+	    @is_admin_of_page = true
+      @post = Post.new # Variable to allowed the current user to create a new post
+    else
+      @is_admin_of_page = false
     end
   end
   
@@ -36,7 +39,7 @@ class UsersController < Clearance::UsersController
   def mybands
     @title = "MyBands"
     @user = User.find(params[:id])
-    @bands =  @user.bands
+    @bands = @user.bands
   end
   
   private
