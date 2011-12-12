@@ -9,6 +9,7 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
     @posts = @band.posts.paginate(:page => params[:page])
+	@artist = Scrobbler::Artist.new(@band.name)
     
     if isCurrentUserInBand
       @post = Post.new

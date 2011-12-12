@@ -12,6 +12,12 @@
 	<% end %>
 <% end %>
 
+<% @artist.top_tracks.each do |t| %>
+	<%= t.name %><br />
+<% end %>
+
+
+
 <table class="profile">
 	<td class="sidebar">
 		<strong>Creation date</strong> <%= @band.creation_date %><br />
