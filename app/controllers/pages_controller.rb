@@ -9,5 +9,9 @@ class PagesController < ApplicationController
   def about
     @title = "About"
   end
+  
+  def search
+    @title = "Search"
+  end
 
 end

@@ -1,6 +1,6 @@
 <h1>MyFM</h1>
 <h2>Social network designed for music bands and their fans!</h2>
-<%= form_tag("/search", :method => "get") do %>
+<%= form_tag("/pages/search", :method => "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
