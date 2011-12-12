@@ -1,0 +1,10 @@
+<h1>MyFM</h1>
+<h2>Search results :</h2>
+
+<%= 
+
+User.find(:all, :conditions => ["users.name LIKE ?", "%#{params[:q]}%"])
+#User.find(:all, :conditions => ["users.firstname LIKE ?", "%#{params[:q]}%"])
+#Band.find(:all, :conditions => ["bands.name LIKE ?", "%#{params[:q]}%"])
+
+%>
