@@ -2,6 +2,7 @@ MyFM::Application.routes.draw do
   
   get "pages/home"
   get "pages/about"
+  get "pages/search"
   
   #resources :users
   #match 'mybands', :to => "user#mybands", :as => :mybands
