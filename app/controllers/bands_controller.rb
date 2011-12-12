@@ -1,4 +1,5 @@
 class BandsController < ApplicationController
+
   # GET /bands
   def index
     @title = "All bands"
@@ -11,7 +12,7 @@ class BandsController < ApplicationController
     @posts = @band.posts.paginate(:page => params[:page])
 	@artist = Scrobbler::Artist.new(@band.name)
     
-    if isCurrentUserInBand
+    if is_current_user_in_band
       @post = Post.new
       @is_admin_of_band = true
     else
@@ -67,7 +68,7 @@ class BandsController < ApplicationController
   
   private
   
-  def isCurrentUserInBand
+  def is_current_user_in_band
     return @band.users.include? current_user
   end
   
