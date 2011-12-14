@@ -32,7 +32,7 @@ gem 'scrobbler'
 
 # Swappable JSON backends
 # Link: http://rubygems.org/gems/multi_json
-gem 'multi_json', '1.0.4'
+#gem 'multi_json', '1.0.4'
 
 # --------------------------------------
 # DEFAULT GEMS (automatically generated)
@@ -45,7 +45,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
-gem "multi_json", "1.0.4"
+#gem "multi_json"
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
