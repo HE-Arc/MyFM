@@ -32,7 +32,7 @@ gem 'scrobbler'
 
 # Swappable JSON backends
 # Link: http://rubygems.org/gems/multi_json
-gem 'multi_json', '1.0.4'
+#gem 'multi_json', '1.0.4'
 
 # --------------------------------------
 # DEFAULT GEMS (automatically generated)

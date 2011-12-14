@@ -6,7 +6,6 @@ body {
   line-height: 18px; }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }
 
@@ -21,11 +20,16 @@ a {
     color: #666; }
   &:hover {
     color: #fff;
-    background-color: #000; } }
+    background-color: #000; }
+}
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px; } }
+div
+{
+  &.field, &.actions
+  {
+  margin-bottom: 10px;
+  }
+}
 
 #notice {
   color: green; }
