@@ -32,6 +32,11 @@ class BandsController < ApplicationController
   # GET /bands/1/edit
   def edit
     @band = Band.find(params[:id])
+    if is_current_user_in_band
+      @band = Band.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   # POST /bands

@@ -38,5 +38,5 @@ production:
   database: MyFM_production
   pool: 5
   username: root
-  password:
+  password: appweb
   host: localhost

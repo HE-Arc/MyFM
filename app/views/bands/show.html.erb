@@ -2,6 +2,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @band.name %></h1>
+<% if @is_admin_of_band %>
+  <%= link_to "Edit band", edit_band_path(@band)%>
+<% end %>
 
 <% if @is_admin_of_band %>
 	<h2>What's up?</h2>
