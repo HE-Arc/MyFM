@@ -23,7 +23,7 @@
 		<strong>Creation date</strong> <%= @band.creation_date %><br />
 		<strong>LastFM</strong> <%= @band.lastFM_bandname %><br />
 		<strong>Bio</strong> <%= @band.bio %><br />
-		<strong>URL</strong> <%= link_to user_path(@band), @band %><br />
+		<strong>URL</strong> <%= link_to band_path(@band), @band %><br />
 		<strong>Messages</strong> <%= @band.posts.count %><br />
 	</td>
 	<td class="main">

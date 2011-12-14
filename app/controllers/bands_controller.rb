@@ -22,7 +22,11 @@ class BandsController < ApplicationController
 
   # GET /bands/new
   def new
-    @band = Band.new
+    if signed_in?
+      @band = Band.new
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /bands/1/edit
@@ -36,6 +40,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.save
+        current_user.joinband(@band)
         format.html { redirect_to @band, notice: 'Band was successfully created.' }
         format.json { render json: @band, status: :created, location: @band }
       else
