@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     bandrelations.find_by_band_id(band).destroy
   end
   
+  def isInBand(band)
+    bandrelations.find_by_band_id(band)
+  end
+  
   def mybands()
     bandrelations.find_all_by_user_id(self.id)
   end
