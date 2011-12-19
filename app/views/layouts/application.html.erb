@@ -14,7 +14,6 @@
 <body>
   <div id="header">
   	<div class="container">
-  	  	
   	  	<%= link_to image_tag("logo16.png", :alt => "MyFM", :class => "round"), root_path %>MyFM |
 	    <% if signed_in? %>
 	      <%= current_user.firstname %>&nbsp;<%= current_user.name %>
@@ -36,8 +35,9 @@
       <div id="flash_<%= key %>"><%=h value %></div>
     <% end %>
   </div>
-  <div class="container">
+  <div id="main_container">
   	<%= yield %>
+  <div id="copyrights">Copyright 2011, He-Arc - Cramatte, Geiser & Wolflisberg</div>
   </div>
 </body>
 </html>

@@ -45,15 +45,5 @@ class UserTest < ActiveSupport::TestCase
     user.leaveband(band)
     assert_nil(user.isInBand(band))
   end
-  
-  ###########Tests mybands###########
-  ####################################
-  test "user1 should have 1 band" do
-    user = users(:user1)
-    band = bands(:band1)
-    user.joinband(band)
-    assert_equal(user.bandrelations.find_all_by_band_id(band),user.mybands())
-  end
-  
-  
+    
 end
