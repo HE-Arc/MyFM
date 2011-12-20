@@ -16,5 +16,10 @@ class User < ActiveRecord::Base
   def mybands()
     bandrelations.find_all_by_user_id(self.id)
   end
+  
+  # Static method
+  def self.search(param)
+    self.where("users.name LIKE ? or users.firstname LIKE ?", param, param)
+  end
       
 end

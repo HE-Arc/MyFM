@@ -8,4 +8,8 @@ class Band < ActiveRecord::Base
   validates :name, :presence => true,
                    :length   => { :maximum => 30 }
   
+  def self.search(param)
+    self.where("bands.name LIKE ?", param)
+  end
+  
 end
