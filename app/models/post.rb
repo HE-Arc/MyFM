@@ -6,10 +6,6 @@ class Post < ActiveRecord::Base
     self.content = ""
   end  
   
-  def clear_post_title
-    self.title = ""
-  end
-  
   default_scope :order => 'posts.created_at DESC'
   
 end
