@@ -1,17 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  creation_date: 2011-11-12
-  lastFM_url: MyString
-  bio: MyText
+band1:
+  name: Henri Des
+  creation_date: 1844-10-10
+  lastFM_bandname: Henri DEs
+  bio: This is my biographie
   twitter_url: MyString
   avatar: MyString
 
-two:
-  name: MyString
-  creation_date: 2011-11-12
-  lastFM_url: MyString
-  bio: MyText
+band2:
+  name: My Band 2
+  creation_date: 2011-11-11
+  lastFM_bandname: MyString
+  bio: Awesome band!
   twitter_url: MyString
   avatar: MyString
+  
