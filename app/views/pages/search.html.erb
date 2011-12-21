@@ -1,10 +1,18 @@
 <h1>MyFM</h1>
 <h2>Search results :</h2>
 
-<%= 
+<% @search_user = User.search("%#{params[:q]}%") %>
+<% @search_band = Band.search("%#{params[:q]}%") %>
 
-User.find(:all, :conditions => ["users.name LIKE ?", "%#{params[:q]}%"])
-#User.find(:all, :conditions => ["users.firstname LIKE ?", "%#{params[:q]}%"])
-#Band.find(:all, :conditions => ["bands.name LIKE ?", "%#{params[:q]}%"])
-
-%>
+<table>
+	<% @search_band.each do |band| %>
+  	<tr>
+   		<td><%= link_to band.name, band %></td>
+  	</tr>
+	<% end %>
+	<% @search_user.each do |user| %>
+  	<tr>
+   		<td><%= link_to user.firstname + " " + user.name, user %></td>
+  	</tr>
+	<% end %>
+</table>
