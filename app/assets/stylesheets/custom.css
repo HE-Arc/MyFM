@@ -1,7 +1,14 @@
 html, body
 {
-	background: #C3D9FF;
+	background: #dddddd;
 	height:100%;
+	margin:0;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
+.round
+{
+	margin:4px;
 }
 
 table.profile tbody tr td.sidebar
@@ -11,9 +18,11 @@ table.profile tbody tr td.sidebar
 
 #copyrights
 {
+	font-weight:bold;
 	margin: auto;
 	width:305px;
-	color: #C3D9FF;
+	color: #aaaaaa;
+	font-size:0.6em;
 }
 .sidebar
 {
@@ -48,17 +57,23 @@ table.posts
 	background-color:white;
 	padding: 16px;
 	min-height: 100%;
-	padding-top:45px;
-	
+	padding-top:35px;
+	color:#00ccff;
 }
 
 #header
 {
-    background-color: #222222;
+	background-image:url('toolbar_bg.jpg');
+	background-repeat:repeat-x;
     color: #FFFFFF;
     margin-bottom: 0;
     position: fixed;
     width: 100%;
+}
+
+#header a
+{
+    color: #FFFFFF;
 }
 
 img
