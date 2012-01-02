@@ -6,6 +6,15 @@ html, body
 	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 
+.famous_songs
+{
+    background-color: #00CCFF;
+    border: 1px dotted white;
+    color: white;
+    font-size: 0.7em;
+    padding: 8px;
+}
+
 .round
 {
 	margin:4px;

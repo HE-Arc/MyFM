@@ -6,6 +6,15 @@
   <%= link_to "Edit band", edit_band_path(@band)%>
 <% end %>
 
+<p class="famous_songs">
+Made famous for the songs 
+<% a = Array.new %>
+<% @artist.top_tracks.each do |t| %>
+	<% a.push(t.name) %>
+<% end %>
+<%= a.join(", ") %>
+</p>
+
 <% if @is_admin_of_band %>
 	<h2>What's up?</h2>
 	<%= form_for [@band, @post] do |f| %>
@@ -14,13 +23,6 @@
 		<%= f.submit %>
 	<% end %>
 <% end %>
-
-<% @artist.top_tracks.each do |t| %>
-	<%= t.name %><br />
-<% end %>
-
-
-
 <table class="profile">
 	<td class="sidebar">
 		<strong>Creation date</strong> <%= @band.creation_date %><br />
