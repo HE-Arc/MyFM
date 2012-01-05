@@ -6,13 +6,79 @@ html, body
 	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 
+.pagination
+{
+	color: #dddddd;
+}
+
+#bandInfos
+{
+	float:left;
+	background-color: #00CCFF;
+	color:white;
+	width:260px;
+	margin-top:10px;
+	margin-right:10px;
+	padding: 10px;
+	font-size:0.6em;
+}
+
+#posts
+{
+	float:left;
+	margin:10px;
+	width:610px;
+}
+
+#bandpresentation
+{
+	width:100%;
+	margin-top: 16px;
+}
+
+#bandAvatar
+{
+	float:left;
+	width:128px;
+	margin: 0 auto;
+}
+
 .famous_songs
 {
+	float:left;
+	margin-left:20px;
+	width:755px;
     background-color: #00CCFF;
     border: 1px dotted white;
     color: white;
     font-size: 0.7em;
     padding: 8px;
+}
+
+#main_container a
+{
+	color:#dddddd;
+	font-weight:bold;
+}
+
+#whatsuptextarea
+{
+	color:#00CCFF;
+	font-weight:bold;
+}
+
+#whatsup
+{
+	display:block;
+	color:white;
+	background-color:#00CCFF;
+	padding:15px;
+	margin-bottom:10px;
+}
+
+form#new_post.new_post
+{
+	display:inline;
 }
 
 .round
@@ -39,9 +105,9 @@ table.profile tbody tr td.sidebar
 }
 .timestamp {
   display: block;
-  font-size: 85%;
-  color: #666;
-  font-style:italic;
+  font-size: 0.6em;
+  color: #DDD;
+  margin-bottom: 15px;
 }
 
 .post
@@ -88,96 +154,4 @@ table.posts
 img
 {
   vertical-align: middle;
-}
-
-nav {
-  background-color: white;
-  float: right;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 0.2em 0;
-}
-
-nav ul li a {
-  padding: 0 5px;
-  font-weight: bold;
-}
-
-nav ul li a:visited {
-  color: #09c;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
-div.field, div.actions {
-  margin-bottom: 10px;
-}
-
-ul.users {
-  margin-top: 1em;
-}
-
-.users li {
-  list-style: none;
-}
-
-h1.userpost {
-  margin-bottom: 0.3em;
-}
-
-table.userposts {
-  margin-top: 1em;
-}
-
-table.userposts tr {
-  height: 70px;
-}
-
-table.userposts tr td.gravatar {
-  border-top: 1px solid #ccc;
-  vertical-align: top;
-  width: 50px;
-}
-
-table.userposts tr td.userpost {
-  border-top: 1px solid #ccc;
-  vertical-align: top;
-  padding-top: 10px;
-}
-
-
-
-div.user_info img {
-  padding-right: 0.1em;
-}
-
-div.user_info a {
-  text-decoration: none;
-}
-
-div.user_info span.user_name {
-  position: absolute;
-}
-
-div.user_info span.microposts {
-  font-size: 80%;
-}
-
-form.new_micropost {
-  margin-bottom: 2em;
-}
-
-form.new_micropost textarea {
-  height: 4em;
-  margin-bottom: 0;
 }

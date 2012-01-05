@@ -30,6 +30,10 @@ gem 'capistrano'
 # Link: http://scrobbler.rubyforge.org/
 gem 'scrobbler'
 
+# Wrapper for the twitter web services
+# Link: http://twitter.rubyforge.org/
+gem 'twitter'
+
 # Swappable JSON backends
 # Link: http://rubygems.org/gems/multi_json
 #gem 'multi_json', '1.0.4'

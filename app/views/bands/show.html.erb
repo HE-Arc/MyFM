@@ -3,41 +3,56 @@
 
 <h1><%= @band.name %></h1>
 <% if @is_admin_of_band %>
-  <%= link_to "Edit band", edit_band_path(@band)%>
+  <%= link_to "Edit band", edit_band_path(@band)%><br />
 <% end %>
 
-<p class="famous_songs">
-Made famous for the songs 
-<% a = Array.new %>
-<% @artist.top_tracks.each do |t| %>
-	<% a.push(t.name) %>
-<% end %>
-<%= a.join(", ") %>
-</p>
-
-<% if @is_admin_of_band %>
-	<h2>What's up?</h2>
-	<%= form_for [@band, @post] do |f| %>
-		<%= f.label :content %><br />
-		<%= f.text_field :content %><br />
-		<%= f.submit %>
+<div id="bandpresentation">
+	<% if(!@band.avatar.empty?) %>
+		<img id="bandAvatar" src="<%= @band.avatar %>" />
 	<% end %>
-<% end %>
-<table class="profile">
-	<td class="sidebar">
-		<strong>Creation date</strong> <%= @band.creation_date %><br />
-		<strong>LastFM</strong> <%= @band.lastFM_bandname %><br />
-		<strong>Bio</strong> <%= @band.bio %><br />
-		<strong>URL</strong> <%= link_to band_path(@band), @band %><br />
-		<strong>Messages</strong> <%= @band.posts.count %><br />
-	</td>
-	<td class="main">
+
+	<% if(!@artist.top_tracks.empty?) %>
+		<div class="famous_songs">
+			Made famous for the songs 
+			<% a = Array.new %>
+			<% @artist.top_tracks.each do |t| %>
+				<% a.push(t.name) %>
+			<% end %>
+			<%= a.join(", ") %>
+			 as provided by last.fm
+		</div>
+		<div style="clear:both;"></div>
+	<% end %>
+</div>
+
+
+<div id="bandposts">
+	<div id="bandInfos">
+		<strong>Creation date: </strong> <%= @band.creation_date %><br />
+		<strong>Posts so far: </strong> <%= @band.posts.count %><br />
+		<strong>Bio: </strong> <%= @band.bio %><br />
+	</div>
+	<div id="posts">
+		<% if @is_admin_of_band %>
+			<div id="whatsup">
+			<%= form_for [@band, @post] do |f| %>
+				<%= f.text_field :content, :id => "whatsuptextarea", :value => "What's new ?", :onfocus => "this.value=''" %>
+				<%= f.submit %>
+			<% end %>
+			</div>
+		<% end %>
+		
 		<% unless @band.posts.empty? %>
-        <table class="posts">
-          <%= render @posts %>
-        </table>
-        <%= will_paginate @posts %>
-      <% end %>
-	</td>
-</table>
+			<%= render @posts %>
+			<div style="margin-top:10px;">
+				<%= will_paginate @posts %>
+			</div>
+		<% end %>
+		
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+
 
