@@ -20,7 +20,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 
 # Pagination library
 # Link: https://github.com/mislav/will_paginate/
-gem 'will_paginate', '3.0.pre2'
+gem 'will_paginate', '~> 3.0.2'
 
 # Executing commands in parallel on multiple remote machines, via SSH (mainly for deploying applications)
 # Link: https://rubygems.org/gems/capistrano
@@ -29,10 +29,6 @@ gem 'capistrano'
 # Wrapper for the audioscrobbler (last.fm) web services
 # Link: http://scrobbler.rubyforge.org/
 gem 'scrobbler'
-
-# Wrapper for the twitter web services
-# Link: http://twitter.rubyforge.org/
-gem 'twitter'
 
 # Swappable JSON backends
 # Link: http://rubygems.org/gems/multi_json
@@ -60,9 +56,6 @@ gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
