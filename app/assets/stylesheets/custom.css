@@ -6,6 +6,11 @@ html, body
 	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 
+div.container form
+{
+	display:inline;
+}
+
 .pagination
 {
 	color: #dddddd;

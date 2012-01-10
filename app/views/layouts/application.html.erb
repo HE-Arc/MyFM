@@ -13,7 +13,11 @@
 	      <%= current_user.firstname %>&nbsp;<%= current_user.name %>
 	    <% else %>
 	      <%= link_to "Sign in", sign_in_path %>
-	    <% end %>
+	    <% end %> |
+		<%= form_tag("/pages/search", :method => "get") do %>
+		  <%= text_field_tag(:q) %>
+		  <%= submit_tag("Search") %>
+		<% end %>
 	  <div style="float: right; padding-top: 7px;">
 	  	<% if signed_in? %>
 	<!--mybands_user_path(current_user.id)-->
